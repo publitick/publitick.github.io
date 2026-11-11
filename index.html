@@ -1,6 +1,259 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publitick</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f0ede8;
+      --accent: #c94fa0;
+      --muted: #5a5a5a;
+      --divider: #1e1e1e;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      background: linear-gradient(135deg, #e0409a, #9b3ec8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-cta {
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-cta:hover { color: var(--fg); }
+
+    /* HERO */
+    header {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 2rem 2rem;
+      gap: 2rem;
+    }
+
+    .logo-wrap {
+      width: 160px;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, #e8e4de 40%, #c94fa0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      color: var(--muted);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* SERVICES */
+    section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--divider);
+      margin-top: 4rem;
+    }
+
+    .service {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid var(--divider);
+    }
+    .service:last-child { border-right: none; }
+
+    .service-num {
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: var(--fg);
+    }
+
+    .service p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--divider);
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #e0409a, #9b3ec8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-tagline {
+      font-size: 1rem;
+      color: var(--fg);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-copy {
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      nav { padding: 0.5rem 1.5rem; }
+      header { padding: 1rem 1.5rem 2rem; }
+      section { grid-template-columns: 1fr; }
+      .service { border-right: none; border-bottom: 1px solid var(--divider); }
+      .service:last-child { border-bottom: none; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
+      .footer-right { text-align: center; }
+      .service { text-align: center; }
+      h1, .tagline { text-align: center; }
+    }
+  </style>
+</head>
 <body>
-<p>Hello</p>
+
+  <nav></nav>
+
+  <header>
+    <div class="logo-wrap">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#e8409e"/>
+            <stop offset="100%" stop-color="#7b2fe0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- P bold fill -->
+        <path d="M48 164 L48 36 L108 36
+                 C134 36 154 54 154 82
+                 C154 110 134 128 108 128
+                 L72 128 L72 164 Z
+                 M72 56 L72 108 L104 108
+                 C120 108 130 97 130 82
+                 C130 67 120 56 104 56 Z"
+              fill="url(#g1)"/>
+
+        <!-- Barra horizontal de balanza — centrada en la curva de la P -->
+        <line x1="90" y1="136" x2="168" y2="136" stroke="url(#g1)" stroke-width="5" stroke-linecap="round"/>
+
+        <!-- Eje vertical -->
+        <line x1="129" y1="136" x2="129" y2="168" stroke="url(#g1)" stroke-width="5" stroke-linecap="round"/>
+
+        <!-- Cadena platillo izquierdo -->
+        <line x1="96" y1="136" x2="88" y2="156" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Platillo izquierdo arco -->
+        <path d="M80 156 Q88 164 96 156" stroke="url(#g1)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+        <!-- Cadena platillo derecho -->
+        <line x1="162" y1="136" x2="170" y2="156" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Platillo derecho arco -->
+        <path d="M162 156 Q170 164 178 156" stroke="url(#g1)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+        <!-- Base de la balanza -->
+        <line x1="118" y1="168" x2="140" y2="168" stroke="url(#g1)" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h1>Publitick</h1>
+    <p class="tagline">Marketing con conciencia</p>
+  </header>
+
+  <section>
+    <div class="service">
+      <span class="service-num">01</span>
+      <h2>Publicidad Online Ética</h2>
+      <p>Impacto real sin manipulación.</p>
+    </div>
+    <div class="service">
+      <span class="service-num">02</span>
+      <h2>Creación de Imagen Ética</h2>
+      <p>Una identidad que refleja tus valores.</p>
+    </div>
+    <div class="service">
+      <span class="service-num">03</span>
+      <h2>Eventos Bioéticos</h2>
+      <p>Experiencias que conectan con propósito.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-brand">Publitick</span>
+    <div class="footer-right">
+      <span class="footer-tagline">Marketing con conciencia</span>
+      <span class="footer-copy">© 2026 Publitick</span>
+    </div>
+  </footer>
+
 </body>
 </html>
