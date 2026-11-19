@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Cache-Control" content="public, max-age=86400">
   <meta http-equiv="Expires" content="86400">
   <title>PUBLIēTIKA — Marketing digital con enfoque ético</title>
@@ -47,6 +48,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
     }
 
 
@@ -64,6 +66,13 @@
 
     .logo-wrap {
       width: 140px;
+      margin: 0 auto;
+      display: block;
+    }
+    .logo-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     h1 {
@@ -194,8 +203,8 @@
     .banners {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      width: 100%;
       gap: 0;
+      width: 100%;
     }
 
     .banners img {
@@ -208,6 +217,7 @@
     @media (max-width: 700px) {
       nav { padding: 0.5rem 1.5rem; }
       header { padding: 1rem 1.5rem 2rem; }
+
       section { grid-template-columns: 1fr; }
       .service { border-right: none; border-bottom: 1px solid var(--divider); }
       .service:last-child { border-bottom: none; }
@@ -230,9 +240,9 @@
     <h1>PUBLI<span class="brand-o">ē</span>TI<span class="brand-ka">KA</span></h1>
     <p class="claim">COMUNICACIÓN HONESTA, RESPONSABLE Y TRANSPARENTE</p>
     <div class="banners">
-      <img src="img/banner1.jpg" alt="Comunicación honesta" width="800" height="800" loading="lazy">
-      <img src="img/banner2.jpg" alt="Marketing ético" width="800" height="800" loading="lazy">
-      <img src="img/banner3.jpg" alt="Enfoque responsable" width="780" height="780" loading="lazy">
+      <img src="img/banner1_blue.jpg" alt="Comunicación honesta" width="800" height="800" loading="lazy">
+      <img src="img/banner2_purple.jpg" alt="Marketing ético" width="800" height="800" loading="lazy">
+      <img src="img/banner3_gold.jpg" alt="Enfoque responsable" width="780" height="780" loading="lazy">
     </div>
     <p class="tagline">Construcci<span class="brand-o">ō</span>n de p<span class="brand-a">ā</span>ginas web &amp; marketing digital<br><span class="tagline-sub">con un enfoque ético</span></p>
   </header>
@@ -252,7 +262,7 @@
     <span class="footer-brand">PUBLI<span class="brand-o">ē</span>TIKA</span>
     <span class="footer-tagline">El marketing no se puede concebir sin la ética.</span>
     <div class="copy-wrap">
-      <span class="footer-phone">+34 682 607 796</span>
+      <a class="footer-phone" href="tel:+34682607796">+34 682 607 796</a>
       <span class="footer-muted">(sin spam, sin presión)</span>
     </div>
   </footer>
