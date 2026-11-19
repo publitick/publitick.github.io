@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="version" content="2">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Cache-Control" content="public, max-age=86400">
@@ -85,6 +86,7 @@
     }
 
     .tagline {
+      font-family: 'Open Sans', sans-serif;
       font-size: clamp(1.4rem, 3vw, 2rem);
       color: var(--fg);
       letter-spacing: 0.02em;
@@ -114,7 +116,6 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       border-top: 1px solid var(--divider);
-      margin-top: 4rem;
     }
 
     .service {
@@ -126,18 +127,26 @@
 
 
     h2 {
-      font-family: 'Courier Prime', monospace;
+      font-family: 'Open Sans', sans-serif;
       font-size: clamp(1.3rem, 2.2vw, 1.65rem);
-      font-weight: 400;
+      font-weight: 700;
       line-height: 1.3;
       margin-bottom: 1rem;
-      color: var(--fg);
+      color: var(--purple);
     }
 
     .service p {
       font-size: 1.15rem;
       color: var(--muted);
       line-height: 1.7;
+    }
+
+    .service-slogan {
+      font-family: 'Open Sans', sans-serif;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--gold) !important;
+      margin-top: 1rem;
     }
 
     /* FOOTER */
@@ -176,6 +185,7 @@
       color: var(--muted);
       letter-spacing: 0.06em;
       text-decoration: none;
+      user-select: all;
     }
     .copy-wrap {
       display: inline-flex;
@@ -227,7 +237,7 @@
       h1, .tagline { text-align: center; }
       .banners { grid-template-columns: 1fr; }
       .tagline { padding: 1.5rem 0; }
-      section { margin-top: 0; }
+
     }
   </style>
 </head>
@@ -244,26 +254,27 @@
       <img src="img/banner2_purple.jpg" alt="Marketing ético" width="800" height="800" loading="lazy">
       <img src="img/banner3_gold.jpg" alt="Enfoque responsable" width="780" height="780" loading="lazy">
     </div>
-    <p class="tagline">Construcci<span class="brand-o">ō</span>n de p<span class="brand-a">ā</span>ginas web &amp; marketing digital<br><span class="tagline-sub">con un enfoque ético</span></p>
+    <p class="tagline">Construcción de páginas web &amp; marketing digital<br><span class="tagline-sub">con un enfoque ético</span></p>
   </header>
 
   <section>
     <div class="service">
       <h2>Marketing Digital</h2>
-      <p>Gesti<span class="brand-o">ō</span>n RRSS · SEM/SEO · Meta Ads · Investigación de Mercados</p>
+      <p>Social Media · SEM/SEO · Meta Ads · Investigación de Mercados</p>
+      <p class="service-slogan">Visibilidad con valores. Crecimiento responsable.</p>
     </div>
     <div class="service">
       <h2>Creación de Páginas Web</h2>
-      <p>Landing pages · Optimización · Accesibilidad · Drupal · Tu web, tu propiedad</p>
+      <p>Landing pages · Optimización · Accesibilidad · Drupal · Software libre</p>
+      <p class="service-slogan">Tu web. Tu propiedad. Sin ataduras.</p>
     </div>
   </section>
 
   <footer>
     <span class="footer-brand">PUBLI<span class="brand-o">ē</span>TIKA</span>
-    <span class="footer-tagline">El marketing no se puede concebir sin la ética.</span>
+    <span class="footer-tagline">MARKETING CON CONCIENCIA</span>
     <div class="copy-wrap">
-      <a class="footer-phone" href="tel:+34682607796">+34 682 607 796</a>
-      <span class="footer-muted">(sin spam, sin presión)</span>
+      <span class="footer-phone" x-apple-data-detectors="false">+34&nbsp;682&nbsp;607&nbsp;796</span>
     </div>
   </footer>
 
