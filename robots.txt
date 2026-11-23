@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://publitick.github.io/sitemap.xml
