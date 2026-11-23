@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="version" content="2">
+  <meta name="version" content="3">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Cache-Control" content="public, max-age=86400">
@@ -186,6 +186,20 @@
       letter-spacing: 0.06em;
       text-decoration: none;
       user-select: all;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      transition: color 0.6s ease;
+    }
+
+    @keyframes phone-pulse {
+      0%   { font-weight: 300; opacity: 0.6; letter-spacing: 0.06em; }
+      50%  { font-weight: 800; opacity: 1;   letter-spacing: 0.12em; }
+      100% { font-weight: 300; opacity: 0.6; letter-spacing: 0.06em; }
+    }
+
+    .footer-phone.in-view {
+      animation: phone-pulse 2.4s ease-in-out infinite;
+      color: var(--purple);
     }
     .copy-wrap {
       display: inline-flex;
@@ -278,5 +292,25 @@
     </div>
   </footer>
 
+  <script>
+    const phone = document.querySelector('.footer-phone');
+    let timer = null;
+
+    function triggerPulse() {
+      phone.classList.add('in-view');
+      timer = setTimeout(() => {
+        phone.classList.remove('in-view');
+        timer = null;
+      }, 2400);
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && timer === null) {
+        triggerPulse();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(phone);
+  </script>
 </body>
 </html>
