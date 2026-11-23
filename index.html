@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="version" content="3">
+  <meta name="version" content="4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Cache-Control" content="public, max-age=86400">
@@ -30,12 +30,12 @@
       --bg: #ffffff;
       --fg: #000000;
       --accent: #a0289e;
-      --muted: #888888;
+      --muted: #6b6b6b;
       --divider: #dddddd;
       --black: #000000;
       --blue: #2f70a0;
       --purple: #a0289e;
-      --gold: #d0a457;
+      --gold: #8a6520;
       --cream: #f3f0e8;
     }
 
@@ -55,7 +55,18 @@
 
     /* HERO */
     header {
-      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 2rem 0;
+      gap: 2rem;
+    }
+
+    main { flex: 1; }
+
+    section.hero {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -80,6 +91,7 @@
       font-family: 'Open Sans', sans-serif;
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 500;
+      margin-bottom: 1.5rem;
       line-height: 1;
       letter-spacing: -0.01em;
       color: var(--fg);
@@ -240,7 +252,8 @@
     /* RESPONSIVE */
     @media (max-width: 700px) {
       nav { padding: 0.5rem 1.5rem; }
-      header { padding: 1rem 1.5rem 2rem; }
+      header { padding: 1rem 1.5rem 0; }
+      section.hero { padding: 1rem 1.5rem 2rem; }
 
       section { grid-template-columns: 1fr; }
       .service { border-right: none; border-bottom: 1px solid var(--divider); }
@@ -259,30 +272,35 @@
 
   <header>
     <div class="logo-wrap">
-      <img src="img/icon.jpg" alt="PUBLIēTIKA">
+      <img src="img/icon.webp" alt="PUBLIēTIKA">
     </div>
     <h1>PUBLI<span class="brand-o">ē</span>TI<span class="brand-ka">KA</span></h1>
-    <p class="claim">COMUNICACIÓN HONESTA, RESPONSABLE Y TRANSPARENTE</p>
-    <div class="banners">
-      <img src="img/banner1_blue.jpg" alt="Comunicación honesta" width="800" height="800" loading="lazy">
-      <img src="img/banner2_purple.jpg" alt="Marketing ético" width="800" height="800" loading="lazy">
-      <img src="img/banner3_gold.jpg" alt="Enfoque responsable" width="780" height="780" loading="lazy">
-    </div>
-    <p class="tagline">Construcción de páginas web &amp; marketing digital<br><span class="tagline-sub">con un enfoque ético</span></p>
   </header>
 
-  <section>
-    <div class="service">
-      <h2>Marketing Digital</h2>
-      <p>Social Media · SEM/SEO · Meta Ads · Investigación de Mercados</p>
-      <p class="service-slogan">Visibilidad con valores. Crecimiento responsable.</p>
-    </div>
-    <div class="service">
-      <h2>Creación de Páginas Web</h2>
-      <p>Landing pages · Optimización · Accesibilidad · Drupal · Software libre</p>
-      <p class="service-slogan">Tu web. Tu propiedad. Sin ataduras.</p>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <p class="claim">COMUNICACIÓN HONESTA, RESPONSABLE Y TRANSPARENTE</p>
+      <div class="banners">
+        <img src="img/banner1_blue.webp" alt="Comunicación honesta" width="800" height="800" loading="lazy">
+        <img src="img/banner2_purple.webp" alt="Marketing ético" width="800" height="800" loading="lazy">
+        <img src="img/banner3_gold.webp" alt="Enfoque responsable" width="780" height="780" loading="lazy">
+      </div>
+      <p class="tagline">Construcción de páginas web &amp; marketing digital<br><span class="tagline-sub">con un enfoque ético</span></p>
+    </section>
+
+    <section aria-label="Servicios">
+      <div class="service">
+        <h2>Marketing Digital</h2>
+        <p>Social Media · SEM/SEO · Meta Ads · Investigación de Mercados</p>
+        <p class="service-slogan">Visibilidad con valores. Crecimiento responsable.</p>
+      </div>
+      <div class="service">
+        <h2>Creación de Páginas Web</h2>
+        <p>Landing pages · Optimización · Accesibilidad · Drupal · Software libre</p>
+        <p class="service-slogan">Tu web. Tu propiedad. Sin ataduras.</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <span class="footer-brand">PUBLI<span class="brand-o">ē</span>TIKA</span>
